@@ -1,0 +1,6 @@
+---
+http: 
+retries: 
+attempts: 3 
+perTryTimeout: 2s 
+retryOn: gateway-error,connect-failure 

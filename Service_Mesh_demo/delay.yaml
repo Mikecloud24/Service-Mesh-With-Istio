@@ -1,0 +1,6 @@
+---
+fault: 
+delay: 
+percentage: 
+value: 100 
+fixedDelay: 2s 
