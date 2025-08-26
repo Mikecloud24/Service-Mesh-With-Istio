@@ -3,13 +3,16 @@
 1. # Install AWS CLI
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
 sudo apt install unzip
+
 unzip awscliv2.zip
+
 sudo ./aws/install
 
 aws configure
 
--------------------------------------------------------------------------------------
+
 2.	# Install Terraform
 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
@@ -22,12 +25,13 @@ sudo apt-get update && sudo apt-get install terraform -y
 
 terraform -version
 
--------------------------------------------------------------------------------------------
+
 3.	# Kubeconfig
 aws eks --region us-east-1 update-kubeconfig --name mikecloud24-cluster
----------------------------------------------------------------------------------
+
 
 4.	# Kubectl
+
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
@@ -36,7 +40,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 kubectl version --client
 
-------------------------------------------------------------------------------------------------------------------------
+
 
 5.	# Install EKSCTL
 curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz"
@@ -47,11 +51,11 @@ sudo mv eksctl /usr/local/bin
 
 eksctl version
 
-==================================================================================
+
 
 6.	# run aws iam
 eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster mikecloud24-cluster --approve
------------------------------------------------------------------------------------------------
+
 
 7.	# Create a service account for the ebs volume
 
@@ -63,7 +67,7 @@ eksctl create iamserviceaccount \
   --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
   --approve \
   --override-existing-serviceaccounts
------------------------------------------------------------------------------------------------
+
 
 8.	# Install ingress controller, cert manager for the ebs driver 
 
