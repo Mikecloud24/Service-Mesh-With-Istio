@@ -61,18 +61,18 @@ A) Service Meshes are composed of two primary planes:
 
 - Components Explained: 
 
-- Control Plane (e.g., Istiod in Istio): 
+1. Control Plane (e.g., Istiod in Istio): 
 
-1.1  Manages configurations like VirtualServices and DestinationRules 
-1.2  Pushes policies to sidecars 
-1.3  Handles certificate distribution for mTLS 
-1.4  Aggregates telemetry 
+-  Manages configurations like VirtualServices and DestinationRules 
+-  Pushes policies to sidecars 
+-  Handles certificate distribution for mTLS 
+-  Aggregates telemetry 
 
-- Data Plane (e.g., Envoy Proxy): 
+2. Data Plane (e.g., Envoy Proxy): 
 
-2.1  Intercepts incoming and outgoing service traffic 
-2.2  Applies policies (timeouts, retries, auth) 
-2.3  Handles routing, load balancing, traffic mirroring, etc. 
+-  Intercepts incoming and outgoing service traffic 
+-  Applies policies (timeouts, retries, auth) 
+-  Handles routing, load balancing, traffic mirroring, etc. 
 
 B) Example: 
 
@@ -120,10 +120,10 @@ encrypted traffic, service identity verification, and policy enforcement.
 
 - What Happens During mTLS: 
 
-1.1 Certificates issued by Istiod are rotated regularly 
-1.2 When service A calls service B, the sidecar encrypts the call 
-1.3 Sidecar of B verifies identity of A using mTLS 
-1.4 All of this is invisible to the actual application code 
+-  Certificates issued by Istiod are rotated regularly 
+-  When service A calls service B, the sidecar encrypts the call 
+-  Sidecar of B verifies identity of A using mTLS 
+-  All of this is invisible to the actual application code 
 
 - Example: 
 
@@ -203,7 +203,7 @@ Resilience means your app behaves gracefully under failure conditions. Service M
 
 - Example:
 
-1. checkout retries.yaml file and delay.yaml file to see how you can configure retries and simulate a 2-seconds delay, which help in testing failure scenarios in staging environments.
+-  checkout retries.yaml file and delay.yaml file to see how you can configure retries and simulate a 2-seconds delay, which help in testing failure scenarios in staging environments.
 
 
 
