@@ -1,6 +1,6 @@
 # This Repo explained the implementation of Service Mesh with istio 
 
-Follow the steps after reading this file (service-Mesh.md):
+Follow the steps after reading this file (service-Mesh.md in Service_Mesh_demo folder):
 
 Step 1: 
 
