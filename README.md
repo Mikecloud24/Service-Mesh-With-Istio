@@ -110,48 +110,39 @@ Step 7:
 
 - kubectl apply -f samples/addons
 
-- ![alt text](image-7.png)
+- <img width="940" height="564" alt="image" src="https://github.com/user-attachments/assets/33b14c73-3507-4085-ac2b-07b633673238" />
+
 
 check by running: 
 
 - kubectl get all -n istio-system
 
-- ![alt text](image-8.png)
 
-
-
-Then edit Grafana and Prometheus services by running this command for both services:
+Then edit Grafana and Prometheus services by running this command for both services and change the ClusterIP to LoadBalancer:
 
 - kubectl edit svc grafana -n istio-system
 - kubectl edit svc Prometheus -n istio-system
 
 
-- ![alt text](image-9.png)
-
-
-
 # Login to Grafana and Create a dashboard, then Integrate Prometheus
-
-- ![alt text](image-11.png)
-
 
 
 # Results:
 
 1. Prometheus status Target health
 
-- ![alt text](image-10.png)
+- <img width="940" height="515" alt="image" src="https://github.com/user-attachments/assets/74601a94-bc1c-4c80-aeaf-ea53bfaf8066" />
+
 
 
 2. Grafana home dashboard showing istio resources
+   
+- <img width="940" height="339" alt="image" src="https://github.com/user-attachments/assets/168a253d-b39c-43bd-8997-4240c8a60eed" />
 
-- ![alt text](image-12.png)
 
-3. Grafana showing istio webapps workload dashboard
+4. Grafana showing istio webapps workload dashboard
 
-- ![alt text](image-13.png)
-
-- ![alt text](image-14.png)
+- <img width="940" height="318" alt="image" src="https://github.com/user-attachments/assets/f3d09d5b-7b78-4156-b25b-906de5ff9c97" />
 
 
 4. Grafana showing performance dashboard
